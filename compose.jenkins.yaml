@@ -1,6 +1,5 @@
 services:
   jenkins:
-    image: jenkins/jenkins:lts-jdk17
     build:
       context: .
       dockerfile: Dockerfile
