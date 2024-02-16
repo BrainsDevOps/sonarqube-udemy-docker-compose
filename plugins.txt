@@ -1,0 +1,8 @@
+credentials-binding:657.v2b_19db_7d6e6d
+timestamper:1.26
+workflow-aggregator:596.v8c21c963d92d
+pipeline-stage-view:2.34
+git:5.2.1
+nodejs:1.6.1
+sonar:2.17.1
+github:1.38.0

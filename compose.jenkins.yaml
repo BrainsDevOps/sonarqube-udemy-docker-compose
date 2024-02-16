@@ -1,0 +1,39 @@
+services:
+  jenkins:
+    image: jenkins/jenkins:lts-jdk17
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - jenkins_home:/var/jenkins_home
+    ports:
+      - 8080:8080
+      - 50000:50000
+    expose:
+      - 8080
+      - 50000
+    networks:
+      - sonar
+
+  ngrok-jenkins:
+    profiles:
+      - public
+    image: ngrok/ngrok:latest
+    environment:
+      - NGROK_AUTHTOKEN=${NGROK_AUTHTOKEN}
+    command:
+      - http
+      - http://jenkins:8080
+      - --domain
+      - ${NGROK_DOMAIN}
+    ports:
+      - 4040:4040
+    networks:
+      - sonar
+
+networks:
+  sonar:
+
+volumes:
+  jenkins_home:
+    external: false
