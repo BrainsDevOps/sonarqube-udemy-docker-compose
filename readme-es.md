@@ -1,10 +1,9 @@
 # Ficheros docker-compose para lanzar SonarQube y Jenkins
 
-# Other languages / Otros idiomas / En autres langues
-[![en](https://img.shields.io/badge/en-español-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/README.md)
-[![es](https://img.shields.io/badge/en-español-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/README-es.md)
-[![fr](https://img.shields.io/badge/en-français-red.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/README-fr.md)
-
+## Other languages / Otros idiomas / En autres langues
+[![en](https://img.shields.io/badge/in-english-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme.md)
+[![es](https://img.shields.io/badge/en-español-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme-es.md)
+[![fr](https://img.shields.io/badge/en-français-red.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme-fr.md)
 
 Este repositorio contiene ficheros docker-compose para lanzar fácilmente los ejemplos de código que se tratan en el curso
 
