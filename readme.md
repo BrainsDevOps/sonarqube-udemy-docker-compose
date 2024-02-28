@@ -1,11 +1,11 @@
 # Docker compose files to run Sonarqube, Jenkins and expose with Ngrok to the Internet
 
+This repository contains docker-compose file to easily run to the code examples in the udemy courses
+
 ## Other languages / Otros idiomas / En autres langues
 [![en](https://img.shields.io/badge/in-english-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme.md)
 [![es](https://img.shields.io/badge/en-español-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme-es.md)
 [![fr](https://img.shields.io/badge/en-français-red.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme-fr.md)
-
-This repository contains docker-compose file to easily run to the code examples in the udemy courses
 
 ## Context
 This repository is part of my udemy courses:
