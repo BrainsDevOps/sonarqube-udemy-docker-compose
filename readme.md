@@ -1,53 +1,60 @@
-# Ficheros docker-compose para lanzar SonarQube y Jenkins
+# Docker compose files to run Sonarqube, Jenkins and expose with Ngrok to the Internet
 
-Este repositorio contiene ficheros docker-compose para lanzar fácilmente los ejemplos de código que se tratan en el curso
+# Other languages / Otros idiomas / En autres langues
+[![en](https://img.shields.io/badge/en-español-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/README.md)
+[![es](https://img.shields.io/badge/en-español-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/README-es.md)
+[![fr](https://img.shields.io/badge/en-français-red.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/README-fr.md)
 
-## Contexto
-El repositorio forma parte del contenido de mi cursos de udemy:
-* [Domina Sonarqube](https://www.udemy.com/course/domina-sonarqube/?referralCode=EF59257E7D8DC3026D6D)
 
-Si te interesa aprender más sobre Sonarqube, Puedes comprobar si hay promociones vigentes para los cursos en la sección de cursos de [devopsbrains.com](https://devopsbrains.com/cursos/)
+This repository contains docker-compose file to easily run to the code examples in the udemy courses
 
-## Prerrequisitos
+## Context
+This repository is part of my udemy courses:
+* [Domina Sonarqube (Spanish)](https://www.udemy.com/course/domina-sonarqube/?referralCode=EF59257E7D8DC3026D6D)
+* [Domina Github Actions (Spanish)](https://www.udemy.com/course/domina-github-actions/?referralCode=CBFBAF72C38BE758CFE1)
+
+If you're interested in learning more about Sonarqube or Github actions, you can check if the are any discount coupons available in the
+course section of [devopsbrains.com](https://devopsbrains.com/cursos/)
+
+## Requirements
 * Docker
 * Docker compose
-* Cuenta de ngrok (opcional. Necesario si se quiere exponer los servicios con ngrok)
+* ngrok account (Optional. Needed only if you want to expose the services in Internet)
 
-# Configuración de ngrok
-* Si quieres exponer alguno de los servicios en Internet con ngrok necesitas:
-    * Tener una cuenta de [ngrok](https://ngrok.com/) creada y generar un token de autenticación y un dominio.
-    * Si quieres saber más sobre ngrok, tengo un vídeo de [Youtube](https://youtu.be/UW8BObHdi08) con una guía rápida del tema
-    * Crea un fichero .env a la raíz del repositorio para indicar tu token y dominio de ngrok
+# Ngrok configuration
+* If you want to expose any of the services in Internet with ngrok, you'll need:
+    * An [ngrok](https://ngrok.com/) account with an authentication token and a domain.
+    * If you want to know more about ngrok, there is a [Youtube](https://youtu.be/UW8BObHdi08) vídeo available (Spanish), with a quick guide on the subject
+    * Create a .env file at the repo root folder to declare your ngrok domain and token 
 ```
-NGROK_AUTHTOKEN=<tu token>
-NGROK_DOMAIN=<tu dominio>
+NGROK_AUTHTOKEN=<your token>
+NGROK_DOMAIN=<your domain>
 ```
 
-# Modos de lanzamiento
+# Launch modes
 * Sonarqube: `docker-compose up`
 * Sonarqube + ngrok: `docker-compose --profile public up`
 * Jenkins: `docker compose -f compose.jenkins.yaml up`
 * Jenkins + ngrok: `docker compose -f compose.jenkins.yaml --profile public up`
 
-NOTA: Con una cuenta gratuita de ngrok solo tienes un dominio y solo puedes lanzar una sesión de ngrok a la vez así que solo podrás exponer o Sonar o Jenkins a la vez.
+NOTE: You'll have a single domain with free ngrok account and you can only have a single ngrok session. So you can only expose either SonarQube or Jenkins at the same time
 
-# Primera conexión a Jenkins
-Tras lanzar Jenkins, se puede ir abrir en el navegador http://localhost:8080/
+# First conexion to Jenkins
+* After launching Jenkins, you can open in the web browser http://localhost:8080/
+* We can skip plugin installation, since the plugins needed for the course exercises are already installed. "Select plugins to install" > "None" > "Install"
+* We create an admin user
+* We choose the default server URL: "http://localhost:8080/"
+* The configuration of credentials and tools such as NodeJs and SonarScanner is explained during the course
 
-* Podemos saltar la instalación de plugins, porque los plugins necesarios para los ejercicios del curso ya están instalados. "Select plugins to install" > seleccionar "None" > "Install"
-* Creamos un usuario administrador
-* Seleccionamos la URL por defecto para el servidor: "http://localhost:8080/"
-* La configuración de credenciales, nodeJs, SonarScanner, etc. se explica en las lecciones del curso
+# Known problems
+* [failure with github checkout](https://github.com/jenkinsci/helm-charts/issues/728)
 
-# Problemas conocidos
-* [Fallo checkout de github](https://github.com/jenkinsci/helm-charts/issues/728)
-
-Un alumno tuvo este problema y lo solventó añadiendo esta línea en tu Dockerfile tras la instrucción FROM
+A student had this problem and managed to solve it, by adding this instruction in the Dockerfile after the FROM insttruction
 
 ```
 RUN git config --global --add safe.directory "*"
 ```
 
-* [fallo en la descarga de los plugins](https://community.jenkins.io/t/issue-while-upgrading-plugins-on-latest-jenkins/9846)
+* [Plugin download failure](https://community.jenkins.io/t/issue-while-upgrading-plugins-on-latest-jenkins/9846)
 
-Al perecer las descargas de los mirrors de Jenkins pueden fallar por momentos. En mi caso tuve problemas con ftp.halifax.rwth-aachen.de y por eso opté por incluir la instalación de los plugins en el Dockerfile con jenkins-plugin-cli
+The plugin download from Jenkins mirrors fail sporadically. In my case I had problems with ftp.halifax.rwth-aachen.de. That is why I ended up including the plugin installation in the Dockerfile with jenkins-plugin-cli
