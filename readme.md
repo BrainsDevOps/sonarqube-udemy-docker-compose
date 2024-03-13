@@ -32,6 +32,7 @@ NGROK_DOMAIN=<your domain>
 
 # Launch modes
 * Sonarqube: `docker-compose up`
+* Sonarqube with postgres: `docker-compose -f compose.yaml -f compose.postgres.yaml up`
 * Sonarqube + ngrok: `docker-compose --profile public up`
 * Jenkins: `docker compose -f compose.jenkins.yaml up`
 * Jenkins + ngrok: `docker compose -f compose.jenkins.yaml --profile public up`
