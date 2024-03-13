@@ -5,7 +5,7 @@ Ce repository contient des fichiers docker-compose pour exécuter facilement les
 ## Other languages / Otros idiomas / En autres langues
 [![en](https://img.shields.io/badge/in-english-blue.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme.md)
 [![es](https://img.shields.io/badge/en-español-yellow.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme-es.md)
-[![fr](https://img.shields.io/badge/en-français-red.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme-fr.md)
+[![fr](https://img.shields.io/badge/fr-français-red.svg)](https://github.com/BrainsDevOps/sonarqube-udemy-docker-compose/blob/main/readme-fr.md)
 
 
 ## Contexto
