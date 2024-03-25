@@ -20,6 +20,11 @@ course section of [devopsbrains.com](https://devopsbrains.com/cursos/)
 * Docker compose
 * ngrok account (Optional. Needed only if you want to expose the services in Internet)
 
+## Switching SonarQube versions
+You can check out other branches of the repository to launch other versions of SonarQube than that of the main branch. Check other branches available in the repository.
+
+If you had a previous version and you want to modify it, I advise you to erase the volumes associated with the previous installation of docker compose.
+
 # Ngrok configuration
 * If you want to expose any of the services in Internet with ngrok, you'll need:
     * An [ngrok](https://ngrok.com/) account with an authentication token and a domain.
