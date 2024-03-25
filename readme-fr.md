@@ -20,6 +20,11 @@ Si vous souhaitez en savoir plus sur Sonarqube, vous pouvez vérifier s'il y a d
 * Docker compose
 * Compte de ngrok (Facultatif. Nécessaire si vous voulez exposer des services en Internet avec ngrok)
 
+## Changer de version de SonarQube
+Vous pouvez faire checkout d'autres branches du repository pour lancer d'autres versions de SonarQube que celle de la branche main. Vérifiez d'autres branches disponibles dans le repository.
+
+Si vous aviez une version anterieure et que vous voulez la modifier, je vous conseille d'effacer les volumes associés avec l'installation anterieure de docker compose.
+
 # Configuration de ngrok
 * Si vous voulez exposer n'importe quel service sur l'internet avec ngrok, vous devez:
     * Créer une compte de [ngrok](https://ngrok.com/) et générer un jeton d'authentification et un domaine.

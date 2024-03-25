@@ -1,6 +1,6 @@
 services:
   sonar:
-    image: sonarqube:10.3-community
+    image: sonarqube:10.4.1-community
     volumes:
       - sonarqube_data:/opt/sonarqube/data
       - sonarqube_logs:/opt/sonarqube/logs

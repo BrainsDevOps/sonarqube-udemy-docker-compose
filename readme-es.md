@@ -19,6 +19,11 @@ Si te interesa aprender más sobre Sonarqube, Puedes comprobar si hay promocione
 * Docker compose
 * Cuenta de ngrok (opcional. Necesario si se quiere exponer los servicios con ngrok)
 
+## Cambiar versiones de SonarQube
+Puedes consultar otras ramas del repositorio para lanzar otras versiones de SonarQube además de la versión en la rama. Consulta otras ramas disponibles en el repositorio para que hagas checkout de la rama para la versión que deseas.
+
+Si tenías una versión anterior y quieres modificarla, te aconsejo que borres los volúmenes asociados a la instalación anterior de Docker Compose.
+
 # Configuración de ngrok
 * Si quieres exponer alguno de los servicios en Internet con ngrok necesitas:
     * Tener una cuenta de [ngrok](https://ngrok.com/) creada y generar un token de autenticación y un dominio.
